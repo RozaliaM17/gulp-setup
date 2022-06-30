@@ -13,7 +13,7 @@ var imagemin = require("gulp-imagemin");
 
 
 gulp.task('sass', function () {
-  return gulp.src('./src/sass/*.sass')
+  return gulp.src('./src/sass/**/*.sass')
     .pipe(sass().on('error',sass.logError))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write(''))
@@ -37,7 +37,7 @@ gulp.task('css', function () {
 
 
 gulp.task('scripts', function() {
-  return gulp.src('./src/scripts/*.js')
+  return gulp.src('./src/scripts/**/*.js')
     .pipe(concat('bundle.js'))
     .pipe(uglify())
     .pipe(rename('bundle.min.js'))
